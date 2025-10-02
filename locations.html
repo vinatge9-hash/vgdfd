@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Locations | Cozy Cup Coffee</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+  <script>
+    tailwind.config = { theme: { extend: { colors: { primary: '#6f4e37', secondary: '#D2B48C', accent: '#8B5C2F' } } } }
+  </script>
+  <style>
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    .animate-fadeIn { animation: fadeIn 0.6s ease-out forwards; }
+  </style>
+</head>
+<body class='font-sans antialiased'>
+  <nav class='fixed w-full bg-white shadow-md z-50' aria-label='Main Navigation'>
+    <div class='container mx-auto px-6 py-4'>
+      <div class='flex items-center justify-between'>
+        <a href='index.html' class='text-2xl font-bold text-primary'>Cozy Cup</a>
+        <div class='hidden md:flex space-x-8' aria-label='Primary'>
+          <a href='index.html' class='hover:text-primary transition'>Home</a>
+          <a href='menu.html' class='hover:text-primary transition'>Menu</a>
+          <a href='about.html' class='hover:text-primary transition'>About</a>
+          <a href='locations.html' class='hover:text-primary transition'>Locations</a>
+          <a href='contact.html' class='hover:text-primary transition'>Contact</a>
+          <a href='newsletter.html' class='hover.text-primary transition'>Newsletter</a>
+        </div>
+        <button id='mobile-menu-btn' class='md:hidden p-2 rounded' aria-label='Open Menu'>
+          <svg class='w-6 h-6' fill='none' stroke='currentColor' viewBox='0 0 24 24'>
+            <path stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 12h16M4 18h16'/>
+          </svg>
+        </button>
+      </div>
+      <div id='mobile-menu' class='hidden md:hidden pt-4 pb-2'>
+        <a href='index.html' class='block py-2'>Home</a>
+        <a href='menu.html' class='block py-2'>Menu</a>
+        <a href='about.html' class='block py-2'>About</a>
+        <a href='locations.html' class='block py-2'>Locations</a>
+        <a href='contact.html' class='block py-2'>Contact</a>
+        <a href='newsletter.html' class='block py-2'>Newsletter</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class='pt-24'>
+    <section class='container mx-auto px-6'>
+      <h1 class='text-4xl font-bold text-center mb-4'>Visit Cozy Cup</h1>
+      <p class='text-center text-gray-600 mb-8'>We’re brewing amazing moments in our cozy spaces.</p>
+      <div class='grid lg:grid-cols-2 gap-8'>
+        <div class='rounded-xl overflow-hidden shadow'>
+          <iframe src='https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.097353455364!2d-122.419415!3d37.774929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCoffee%20Shop!5e0!3m2!1sen!2sus' width='100%' height='400' style='border:0' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade'></iframe>
+        </div>
+        <div class='bg-white p-6 rounded-xl shadow flex flex-col justify-center'>
+          <h3 class='font-semibold mb-2'>Downtown Aroma</h3>
+          <p class='text-gray-600'>123 Bean Street, Aroma City</p>
+          <p class='text-gray-600 mt-2'>Hours: Mon-Sun 7:00 AM – 7:00 PM</p>
+          <p class='text-gray-600'>Phone: (555) 123-4567</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class='bg-black text-white py-12'>
+    <div class='container mx-auto px-6'>
+      <div class='text-center'>
+        <p class='text-gray-400'>© 2025 Cozy Cup Coffee. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('mobile-menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) { btn.addEventListener('click', () => { menu.classList.toggle('hidden'); }); }
+  </script>
+</body>
+</html>
